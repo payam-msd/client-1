@@ -1,0 +1,598 @@
+//What You can find here :
+//* Header
+//* Overlays
+//* Footer
+//* Navigation
+//* All Other CSS
+
+//TODOs Header
+//* Header properties in (Header)
+//! Header style part
+.header {
+  height: 95vh;
+
+  &__downArrow {
+    position: absolute;
+    bottom: 6%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include respond(phone) {
+      bottom: 0;
+    }
+  }
+  &__bounce {
+    -moz-animation: bounce 3s infinite;
+    -webkit-animation: bounce 3s infinite;
+    animation: bounce 3s infinite;
+  }
+
+  &__slider {
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    overflow: hidden;
+
+    &-img1 {
+      background-image: linear-gradient(
+          to top,
+          rgba($color-primary, 0.7),
+          rgba($color-primary-dark, 0.6)
+        ),
+        url("../img/Naranjestan-qavam-2.jpg");
+      height: 100vh;
+      background-size: cover;
+      background-repeat: no-repeat !important;
+      background-position: 50% 50%;
+    }
+    &-img2 {
+      background-image: linear-gradient(
+          to top,
+          rgba($color-primary, 0.7),
+          rgba($color-primary-dark, 0.6)
+        ),
+        url("../img/Naranjestan-qavam-2.jpg");
+      height: 100vh;
+      background-size: cover;
+      background-repeat: no-repeat !important;
+      background-position: 50% 50%;
+    }
+
+    &-img3 {
+      background-image: linear-gradient(
+          to top,
+          rgba($color-primary, 0.7),
+          rgba($color-primary-dark, 0.6)
+        ),
+        url("../img/Hafeziye.jpg");
+      height: 100vh;
+      background-size: cover;
+      background-repeat: no-repeat !important;
+      background-position: 50% 50%;
+    }
+
+    &-img4 {
+      background-image: linear-gradient(
+          to top,
+          rgba($color-primary, 0.7),
+          rgba($color-primary-dark, 0.6)
+        ),
+        url("../img/Delgosha-garden.jpg");
+      height: 100vh;
+      background-size: cover;
+      background-repeat: no-repeat !important;
+      background-position: 50% 50%;
+    }
+
+    @include respond(tab-port) {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+
+    @media (min-resolution: 192dpi) and (min-width: 37.5em),
+      (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+      (min-width: 125em) {
+      background-image: linear-gradient(
+        to top,
+        rgba($color-primary, 0.8),
+        rgba($color-primary-dark, 0.8)
+      );
+    }
+
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 89%, 0 99%);
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 99%);
+      height: 99vh;
+    }
+
+    @include respond(phone) {
+      // -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+      // clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    &-text {
+      color: $color-gray-light-1;
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+      line-height: 2;
+      font-weight: 600;
+
+      @include respond(phone) {
+        font-weight: 400;
+        font-size: 1.7rem;
+        margin-bottom: 4rem;
+      }
+
+      &::before {
+        font-size: 3rem;
+        content: open-quote;
+      }
+
+      &::after {
+        font-size: 3rem;
+        content: close-quote;
+      }
+    }
+  }
+
+  //! Logo Style part
+  &__logo-box {
+    position: absolute;
+    display: inline-block;
+    top: 0rem;
+    left: 20rem;
+    animation: dropdown 2s;
+  }
+
+  &__logo {
+    height: 7rem;
+  }
+}
+
+.section-about {
+  position: relative;
+  height: 100%;
+  z-index: 50;
+  padding: 1rem 0;
+  @include respond(phone) {
+    margin-top: 10rem !important;
+  }
+
+  &__background {
+    position: relative;
+    padding-top: 8rem;
+    padding-bottom: 12rem;
+
+    &-svg-1 {
+      @include center(true, false);
+      width: 100%;
+    }
+    &-svg-2 {
+      @include center(true, false);
+      width: 100%;
+    }
+  }
+
+  &__mainBox {
+    position: relative;
+  }
+}
+
+.mainBox {
+  list-style: none;
+  @include respond(phone) {
+    margin-top: 45rem;
+  }
+  &__listOne {
+    position: absolute;
+    top: 0;
+    left: 58%;
+    transform: translateX(-42%);
+    @include respond(phone) {
+      left: 20%;
+    }
+  }
+  &__listTwo {
+    position: absolute;
+    top: 0;
+    left: 83%;
+    transform: translateX(-18%);
+    @include respond(phone) {
+      left: 69%;
+    }
+  }
+  &-text {
+    padding-bottom: 2.5rem;
+    i {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .fas {
+      @include respond(phone) {
+        padding-right: 1rem;
+      }
+      position: relative;
+      padding-right: 1.5rem;
+      color: rgba(96, 172, 243, 0.813);
+      &:hover {
+        color: rgb(46, 142, 231);
+      }
+      &::after {
+        @include respond(phone) {
+          left: -0.6rem;
+          top: -0.7rem;
+          height: 2.7rem;
+          width: 2.7rem;
+        }
+        content: "";
+        position: absolute;
+        left: -0.7rem;
+        top: -0.7rem;
+        height: 3rem;
+        width: 3rem;
+        border-radius: 100px;
+        border: 2px solid rgba(96, 172, 243, 0.478);
+      }
+    }
+  }
+}
+
+//TODOs Overlays
+//? Contains Background-Color Gray All Over Pages
+.section-gallery {
+  position: relative;
+  height: 100%;
+  padding: 60rem 0 25rem 0;
+  @include respond(tab-port) {
+    padding: 18rem 0;
+  }
+  @include respond(phone) {
+    padding: 50rem 0 15rem 0;
+    margin-top: 10rem !important;
+  }
+}
+
+.section-book {
+  padding: 15rem 0;
+  height: 100%;
+  background-image: linear-gradient(
+    to bottom right,
+    $color-primary-light,
+    $color-primary-dark
+  );
+
+  @include respond(tab-port) {
+    padding: 10rem 0;
+  }
+}
+
+.book {
+  background-image: linear-gradient(
+      105deg,
+      rgba($color-white, 0.9) 50%,
+      transparent 50%
+    ),
+    url("/img/15946490274_afdece9faa_b.jpg");
+  background-size: cover;
+  box-shadow: 0 1.5rem 4rem $shadow-primary;
+  border-radius: 1.5rem;
+
+  @include respond(tab-land) {
+    background-image: linear-gradient(
+        105deg,
+        rgba($color-white, 0.9) 65%,
+        transparent 65%
+      ),
+      url("/img/Nasir-molk-2.jpg");
+  }
+
+  @include respond(tab-port) {
+    background-image: linear-gradient(
+      to right,
+      rgba($color-white, 0.9) 0%,
+      rgba($color-white, 0.9) 100%
+    );
+    //   url(../img/nat-10.jpg);
+  }
+
+  &__form {
+    padding: 6rem;
+    width: 50%;
+
+    @include respond(tab-land) {
+      width: 65%;
+    }
+
+    @include respond(tab-port) {
+      width: 100%;
+      padding: 2.5rem;
+    }
+  }
+}
+
+//TODOs Footer
+.footer {
+  height: 50%;
+  background-color: $color-gray-3;
+  font-size: 1.4rem;
+  padding: 3rem 0;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  text-align: center;
+
+  &__socialMedia {
+    position: relative;
+    margin-top: 8rem;
+    text-align: center;
+    margin: 0 auto;
+    width: 109%;
+    .fab {
+      padding-right: 4rem;
+      margin-top: 5rem;
+    }
+    i:hover {
+      color: $color-primary-light;
+    }
+  }
+
+  @include respond(tab-port) {
+    padding: 8rem 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  &__logo-box {
+    text-align: center;
+    margin-bottom: 8rem;
+
+    @include respond(tab-port) {
+      margin-bottom: 6rem;
+    }
+  }
+
+  &__logo {
+    // width: 15rem;
+    height: 24rem;
+  }
+
+  &__nav {
+    @include respond(tab-port) {
+      text-align: center;
+      width: 100%;
+    }
+
+    border-top: 0.1rem solid $color-gray;
+    padding-top: 2rem;
+    display: inline-block;
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    display: inline-block;
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      background-color: $color-gray-3;
+      color: $color-gray-light-1;
+      text-decoration: none;
+      text-transform: uppercase;
+      display: inline-block;
+      transition: all 0.2s;
+
+      &:not(:last-child) {
+        margin-right: 1.5rem;
+      }
+    }
+
+    &:hover,
+    &:active {
+      color: $color-primary;
+      box-shadow: 0 1rem 2rem $shadow-primary;
+      transform: rotate(5deg) scale(1.3);
+    }
+  }
+
+  &__copyright {
+    border-top: 0.1rem solid $color-gray;
+    padding-top: 2rem;
+    display: inline-block;
+    width: 100%;
+    float: right;
+
+    @include respond(tab-port) {
+      float: left;
+      width: 100%;
+    }
+  }
+}
+
+//TODOs Navigation
+
+//? SVG animation
+.svg-wrapper {
+  height: 60px;
+  position: absolute;
+  top: 65%;
+  left: 78%;
+  transform: translateY(-50%);
+  width: 14px;
+}
+
+.shape {
+  fill: transparent;
+  stroke-dasharray: 140 540;
+  stroke-dashoffset: -185;
+  stroke-width: 4px;
+  stroke: #fff;
+}
+
+.svg-wrapper:hover .shape {
+  -webkit-animation: 0.5s draw linear forwards;
+  animation: 0.5s draw linear forwards;
+}
+
+//? actual Navbar
+.Navbar {
+  position: fixed;
+  width: 98%;
+  margin-left: 3px;
+  z-index: 150;
+  margin-top: 15px;
+  display: flex;
+  height: 70px;
+  padding: 7px 18px;
+  font-family: "Product sans";
+  font-size: 16px;
+  align-items: baseline !important;
+  text-transform: uppercase;
+
+  &__signup {
+    position: absolute;
+    left: 1px;
+    top: -4px;
+  }
+
+  &__item {
+    align-items: center;
+
+    &-right {
+      position: relative;
+    }
+
+    div {
+      width: 20%;
+      height: 100%;
+      transition: all ease-in-out 0.2s;
+    }
+
+    a {
+      letter-spacing: 1.7px;
+      text-decoration: none;
+      color: white;
+      width: 100%;
+      padding: 0 0.5em;
+      line-height: 50px;
+    }
+
+    &-brand {
+      margin-right: auto;
+      margin-left: 5rem;
+      //   font-size: 2.5rem;
+    }
+  }
+
+  &__link {
+    border: none;
+    position: relative;
+    padding-bottom: 14px !important;
+
+    &-toggle {
+      display: none;
+    }
+
+    &:hover {
+      border: none;
+
+      &::after {
+        width: 100%;
+        left: 0;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 0px;
+      height: 5px;
+      left: 50%;
+      bottom: 0;
+      border-bottom: 2px solid #fff;
+      transition: all ease-in-out 0.2s;
+    }
+  }
+
+  &__Items {
+    display: flex;
+    overflow: hidden;
+    height: 100%;
+    text-align: center;
+    margin: 0 auto;
+    padding-right: 1rem;
+
+    &-right {
+      align-self: flex-end;
+      margin-left: auto;
+    }
+  }
+}
+//* The part of navigation where user scroll down and bg appear
+.Navbar-scroll {
+  background: rgba(41, 152, 255, 0.9);
+  margin-top: -6px;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 4px 15px 65px -15px rgb(41, 152, 255);
+  transition: all 0.5s;
+}
+.Navbar__item-brand-scroll {
+  margin-top: 5px;
+  transition: all 0.2s;
+}
+
+@media only screen and (max-width: 768px) {
+  .Navbar__Items {
+    display: none;
+  }
+  .Navbar__item-brand {
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 3rem;
+  }
+}
+
+//TODOs All Other CSS
+//? Cauterize The (Section-about & Section-tours) Heading-Text
+.u-center-text {
+  text-align: center;
+}
+
+//? Diff Margin-Bottoms
+.m-bottom-small {
+  margin-bottom: 2rem;
+}
+
+.m-bottom-medium {
+  @include respond(tab-port) {
+    margin-bottom: 3rem;
+  }
+
+  margin-bottom: 4rem;
+}
+
+.m-bottom-big {
+  @include respond(tab-port) {
+    margin-bottom: 4rem;
+  }
+
+  margin-bottom: 15rem;
+}
+
+.m-top-small {
+  margin-top: 4rem;
+}
+
+.m-top-medium {
+  margin-top: 6rem;
+}
+
+.m-top-big {
+  margin-top: 8rem;
+}
+.m-top-xl {
+  margin-top: 18rem;
+}

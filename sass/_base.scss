@@ -1,0 +1,266 @@
+//What You can find here:
+//* Variables
+//* Initial Files
+//* Mixin
+//* Typography
+
+//TODOs Variables
+//?Color's
+$color-primary: #7ed56f;
+$color-primary-light: #55c57a;
+$color-primary-dark: #28b485;
+
+$color-secondary-light: #ffb900;
+$color-secondary-dark: #ff7730;
+
+$color-tertiary-light: #2998ff;
+$color-tertiary-dark: #5643fa;
+
+$color-gray: #777;
+$color-gray-2: #999;
+$color-gray-3: #333;
+
+$color-gray-light-1: #f7f7f7;
+$color-gray-light-2: #eee;
+$color-white: #fff;
+$color-black: #000;
+
+//?Variables
+$shadow-primary: rgba(0, 0, 0, 0.3);
+$shadow-secondary: rgba(0, 0, 0, 0.15);
+
+//? Connect to GRID SyS
+$grid-width: 114rem;
+$gutter-vertical: 8rem;
+$gutter-vertical-small: 6rem;
+$gutter-horizontal: 6rem;
+
+//TODOs Base Initial Files
+//? Reset The Initial setting by Browser
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-user-select: none; /* disable text select */
+  -webkit-touch-callout: none; /* disable callout, image save panel (popup) */
+  -webkit-tap-highlight-color: transparent; /* "turn off" link highlight */
+  h1,
+  h2,
+  h3 {
+    text-rendering: optimizeLegibility;
+  }
+  a:focus {
+    outline: 0; // Firefox (remove border on link click)
+  }
+  @include respond(phone) {
+  }
+}
+
+body {
+  background-color: $color-gray-light-1;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
+
+  box-sizing: border-box;
+  font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: $color-gray;
+  padding: 0.8rem 0.8rem 0.8rem 1rem;
+}
+
+html {
+  scroll-behavior: smooth;
+
+  //? we're using (rem) the initial font-size would be this
+  //? 1rem = 10px  10px/16px = 62.5%
+  font-size: 62.5%;
+
+  //? For mobile-first approach we need to change the order
+  //? as an example in bottom we should first order tab-port
+  //? Then the tab-land
+  @include respond(tab-land) {
+    //? width < 1200px
+    font-size: 56.25%; //? 1 rem = 9px  | 9px/16px =56.25%
+  }
+
+  //! The Tab-port stand as second ONE!! because  when mediaQuery run
+  //! in width of(700px for Example) Both tab-land and tab-port will applied
+  //! and the last mediaQuery will finally choice
+  @include respond(tab-port) {
+    //? width < 900px
+    font-size: 50%; //? 1rem = 8px |  8px/16px = 50%
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%; //? 1rem = 12px  | 12/16 = 75%
+  }
+}
+
+//TODOs Mixin
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+@mixin center($horizontal: true, $vertical: true) {
+  position: absolute;
+  @if ($horizontal and $vertical) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } @else if ($horizontal) {
+    left: 50%;
+    transform: translate(-50%, 0);
+  } @else if ($vertical) {
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+//TODOs Typography
+//? Text-box Properties in (Header)
+.heading-primary {
+  text-transform: uppercase;
+  color: $color-white;
+  margin-bottom: 3rem;
+  //?use to hide any movement in background
+  backface-visibility: hidden;
+
+  &--main {
+    @include respond(phone) {
+      letter-spacing: 0.8rem;
+      margin-bottom: 2rem;
+    }
+
+    display: block;
+    font-weight: 400;
+    font-size: 5rem;
+    letter-spacing: 3.5rem;
+    animation: moveInLeft 1s ease-in;
+  }
+
+  &--sub {
+    @include respond(phone) {
+      letter-spacing: 1.2rem;
+      margin-bottom: 4rem;
+    }
+
+    display: block;
+    margin: 1rem 1rem;
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: 1.2rem;
+    animation: moveInRight 1s ease-in;
+  }
+}
+
+//! Text-box Style From Header
+.header__text-box {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  max-width: 100%;
+  width: 80%;
+}
+
+//? Contains Both BIG Heading-Text's Properties in (Section-about &  Section Tours)
+.heading-secondary {
+  font-size: 3rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  display: inline-block;
+  background-image: linear-gradient(
+    to right,
+    $color-primary,
+    $color-primary-dark
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 0.2rem;
+  transition: all 0.2s;
+
+  @include respond(tab-port) {
+    font-size: 3rem;
+  }
+
+  @include respond(phone) {
+    font-size: 2rem;
+    margin: auto;
+  }
+  &__bg {
+    width: 60%;
+    margin: auto;
+    transform: skewX(-30deg);
+    background: rgba(196, 196, 196, 0.349);
+    mix-blend-mode: multiply;
+    border-radius: 5px;
+    @include respond(phone) {
+      width: 85%;
+    }
+  }
+  &__prop {
+    transform: skewX(30deg);
+  }
+}
+
+.heading-tertiary {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  &__prop2 {
+    float: right;
+    margin-right: 15rem;
+    font-size: 2.5rem;
+    letter-spacing: 1.7px;
+    @include respond(phone) {
+      float: initial;
+      text-align: center;
+      font-size: 1.7rem;
+      width: 100%;
+      margin: 0 auto;
+      position: absolute;
+      left: 0;
+      top: 285%;
+    }
+  }
+}
+
+.paragraph {
+  font-size: 1.6rem;
+
+  &:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+}
+
+//TODOs Font
+@font-face {
+  font-family: "Product sans";
+  src: url("/css/fonts/Product\ Sans\ Bold.ttf");
+}
+@font-face {
+  font-family: "AdelleCyrillic-Bold";
+  src: url("/css/fonts/AdelleCyrillic-Bold.ttf");
+}
