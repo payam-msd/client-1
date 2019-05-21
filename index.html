@@ -36,7 +36,7 @@
       <div class="Navbar__item Navbar__item-brand">
         <!-- ------------------------------------- -->
         <!-- <div class="header__logo-box">
-        <img src="./img/DastanTr (2).png" alt="Logo" class="header__logo" />
+        <img data-src="./img/DastanTr (2).png" alt="Logo" class="header__logo" />
     </div> -->
         <!-- ------------------------------------- -->
         <a href="#header">dastaniran</a>
@@ -68,7 +68,36 @@
 
     <header class="header" id="header">
       <div class="header__slider">
-        <div class="header__slider-img1">
+        <div class="header__slider-img1 ">
+          <picture>
+            <img
+              sizes="(max-width: 1400px) 100vw, 1400px"
+              data-srcset="
+                ./img/Hafeziye_icobcw/Hafeziye_icobcw_c_scale,w_200.jpg   200w,
+                ./img/Hafeziye_icobcw/Hafeziye_icobcw_c_scale,w_352.jpg   352w,
+                ./img/Hafeziye_icobcw/Hafeziye_icobcw_c_scale,w_466.jpg   466w,
+                ./img/Hafeziye_icobcw/Hafeziye_icobcw_c_scale,w_566.jpg   566w,
+                ./img/Hafeziye_icobcw/Hafeziye_icobcw_c_scale,w_653.jpg   653w,
+                ./img/Hafeziye_icobcw/Hafeziye_icobcw_c_scale,w_728.jpg   728w,
+                ./img/Hafeziye_icobcw/Hafeziye_icobcw_c_scale,w_797.jpg   797w,
+                ./img/Hafeziye_icobcw/Hafeziye_icobcw_c_scale,w_869.jpg   869w,
+                ./img/Hafeziye_icobcw/Hafeziye_icobcw_c_scale,w_932.jpg   932w,
+                ./img/Hafeziye_icobcw/Hafeziye_icobcw_c_scale,w_994.jpg   994w,
+                ./img/Hafeziye_icobcw/Hafeziye_icobcw_c_scale,w_1053.jpg 1053w,
+                ./img/Hafeziye_icobcw/Hafeziye_icobcw_c_scale,w_1112.jpg 1112w,
+                ./img/Hafeziye_icobcw/Hafeziye_icobcw_c_scale,w_1167.jpg 1167w,
+                ./img/Hafeziye_icobcw/Hafeziye_icobcw_c_scale,w_1218.jpg 1218w,
+                ./img/Hafeziye_icobcw/Hafeziye_icobcw_c_scale,w_1268.jpg 1268w,
+                ./img/Hafeziye_icobcw/Hafeziye_icobcw_c_scale,w_1323.jpg 1323w,
+                ./img/Hafeziye_icobcw/Hafeziye_icobcw_c_scale,w_1373.jpg 1373w,
+                ./img/Hafeziye_icobcw/Hafeziye_icobcw_c_scale,w_1397.jpg 1397w,
+                ./img/Hafeziye_icobcw/Hafeziye_icobcw_c_scale,w_1400.jpg 1400w
+              "
+              data-src="Hafeziye_icobcw_c_scale,w_1400.jpg"
+              alt=""
+              class="lazyload content"
+            />
+          </picture>
           <div class="header__text-box">
             <h1 class="heading-primary">
               <span class="heading-primary--main">
@@ -82,6 +111,7 @@
           </div>
         </div>
         <div class="header__slider-img2">
+          <img class="lazyload" data-src="./img/Eram-Garden.jpg" alt="" />
           <div class="header__text-box">
             <p lang="en" class="header__slider-text">
               Lorem3 ipsum dolor sit amet consectetur adipisicing elit.
@@ -94,6 +124,8 @@
           </div>
         </div>
         <div class="header__slider-img3">
+          <img class="lazyload" data-src="./img/Delgosha-garden.jpg" alt="" />
+
           <div class="header__text-box">
             <p lang="en" class="header__slider-text">
               Lorem3 ipsum dolor sit amet consectetur adipisicing elit.
@@ -106,6 +138,8 @@
           </div>
         </div>
         <div class="header__slider-img4">
+          <img class="lazyload" data-src="./img/KarimKhani-tower.jpg" alt="" />
+
           <div class="header__text-box">
             <p lang="en" class="header__slider-text">
               Lorem3 ipsum dolor sit amet consectetur adipisicing elit.
@@ -153,18 +187,18 @@
       <div class="section-about__background">
         <picture>
           <source
-            class="section-about__background-svg-2"
-            srcset="/img/undraw_departing_lsgy.svg"
+            class="section-about__background-svg-2 lazyload"
+            data-srcset="/img/undraw_departing_lsgy.svg"
             media="(max-width: 56.25em)"
           />
           <source
-            class="section-about__background-svg-1"
-            srcset="./img/adventures.svg"
+            class="section-about__background-svg-1 lazyload"
+            data-srcset="./img/adventures.svg"
             media="(max-width: 37.5em"
           />
           <img
-            srcset="./img/adventures.svg"
-            class="section-about__background-svg-1"
+            data-srcset="./img/adventures.svg"
+            class="section-about__background-svg-1 lazyload"
             alt="…"
           />
         </picture>
@@ -239,8 +273,8 @@
         <div class="col-1-of-2 ">
           <div class="composition">
             <img
-              class="composition__shape"
-              src="./img/blob-shape.svg"
+              class="composition__shape lazyload"
+              data-src="./img/blob-shape.svg"
               alt="blob-shape"
             />
             <a
@@ -248,27 +282,27 @@
               data-lightbox="image"
               data-title="Click the right half of the image to move forward."
               ><img
-                src="./img/iman-soleimany-zadeh-1205592-unsplash.jpg"
+                data-src="./img/iman-soleimany-zadeh-1205592-unsplash.jpg"
                 alt=""
-                class=" composition__photo composition__photo--p1"
+                class=" composition__photo composition__photo--p1 lazyload"
             /></a>
             <a
               href="./img/Naranjestan-qavam-2.jpg"
               data-lightbox="image"
               data-title="Or press the right arrow on your keyboard."
               ><img
-                src="./img/Naranjestan-qavam-2.jpg"
+                data-src="./img/Naranjestan-qavam-2.jpg"
                 alt=""
-                class=" composition__photo composition__photo--p2"
+                class=" composition__photo composition__photo--p2 lazyload"
             /></a>
             <a
               href="./img/Naranjestan-qavam.jpg"
               data-lightbox="image"
               data-title="The next image in the set is preloaded as you're viewing."
               ><img
-                src="./img/Naranjestan-qavam.jpg"
+                data-src="./img/Naranjestan-qavam.jpg"
                 alt=""
-                class="composition__photo composition__photo--p3"
+                class="composition__photo composition__photo--p3 lazyload"
             /></a>
           </div>
           <div class="col-1-of-2">
@@ -278,27 +312,27 @@
                 data-lightbox="image"
                 data-title="Click anywhere outside the image or the X to the right to close."
                 ><img
-                  src="./img/KarimKhani-tower.jpg"
+                  data-src="./img/KarimKhani-tower.jpg"
                   alt=""
-                  class="composition__photo composition__photo--p4"
+                  class="composition__photo composition__photo--p4 lazyload"
               /></a>
               <a
                 href="./img/Hafeziye.jpg"
                 data-lightbox="image"
                 data-title="Click anywhere outside the image or the X to the right to close."
                 ><img
-                  src="./img/Hafeziye.jpg"
+                  data-src="./img/Hafeziye.jpg"
                   alt=""
-                  class="composition__photo composition__photo--p5"
+                  class="composition__photo composition__photo--p5 lazyload"
               /></a>
               <a
                 href="./img/Vakil-mosque.jpg"
                 data-lightbox="image"
                 data-title="Click anywhere outside the image or the X to the right to close."
                 ><img
-                  src="./img/Vakil-mosque.jpg"
+                  data-src="./img/Vakil-mosque.jpg"
                   alt=""
-                  class="composition__photo composition__photo--p6"
+                  class="composition__photo composition__photo--p6 lazyload"
               /></a>
             </div>
           </div>
@@ -380,7 +414,7 @@
     <footer class="footer" id="footer">
       <div class="footer__logo-box">
         <picture class="footer__logo">
-          <img class="footer__logo" src="./img/DastanTr (2).png" alt="logo" />
+          <img class="footer__logo " src="./img/DastanTr (2).png" alt="logo" />
         </picture>
       </div>
       <div class="row">
@@ -428,8 +462,8 @@
     <!-- <div class="popup" id="popup">
       <div class="popup__content">
         <div class="popup__left">
-          <img src="./img/nat-8.jpg" alt="photo" class="popup__img" />
-          <img src="./img/nat-9.jpg" alt="photo" class="popup__img" />
+          <img data-src="./img/nat-8.jpg" alt="photo" class="popup__img" />
+          <img data-src="./img/nat-9.jpg" alt="photo" class="popup__img" />
         </div>
         <div class="popup__right">
           <a href="#section-tours" class="popup__close">&times;</a>
@@ -451,6 +485,7 @@
       </div>
     </div> -->
 
+    <script src="./js/lazysizes.min.js" async=""></script>
     <!-- JQUERY  -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"

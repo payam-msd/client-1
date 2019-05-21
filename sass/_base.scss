@@ -137,6 +137,23 @@ html {
   transform: translate(-50%, -50%);
 }
 
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
 //TODOs Typography
 //? Text-box Properties in (Header)
 .heading-primary {
@@ -176,13 +193,8 @@ html {
 
 //! Text-box Style From Header
 .header__text-box {
-  position: absolute;
-  top: 48%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  @include center(true, true);
   text-align: center;
-  max-width: 100%;
-  width: 80%;
 }
 
 //? Contains Both BIG Heading-Text's Properties in (Section-about &  Section Tours)
@@ -258,9 +270,5 @@ html {
 //TODOs Font
 @font-face {
   font-family: "Product sans";
-  src: url("/css/fonts/Product\ Sans\ Bold.ttf");
-}
-@font-face {
-  font-family: "AdelleCyrillic-Bold";
-  src: url("/css/fonts/AdelleCyrillic-Bold.ttf");
+  src: url("../css//fonts/ProductSansBold.ttf");
 }

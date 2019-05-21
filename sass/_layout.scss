@@ -30,56 +30,95 @@
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
     overflow: hidden;
-
     &-img1 {
-      background-image: linear-gradient(
-          to top,
+      img {
+        height: 100vh;
+        width: 100vw;
+        background: center center cover no-repeat fixed;
+        background-position: center;
+      }
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: linear-gradient(
+          to bottom right,
           rgba($color-primary, 0.7),
           rgba($color-primary-dark, 0.6)
-        ),
-        url("../img/Naranjestan-qavam-2.jpg");
-      height: 100vh;
-      background-size: cover;
-      background-repeat: no-repeat !important;
-      background-position: 50% 50%;
+        );
+        opacity: 0.6;
+      }
     }
     &-img2 {
-      background-image: linear-gradient(
-          to top,
+      img {
+        height: 100vh;
+        width: 100%;
+        background: center center cover no-repeat fixed;
+        background-position: center;
+      }
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: linear-gradient(
+          to bottom right,
           rgba($color-primary, 0.7),
           rgba($color-primary-dark, 0.6)
-        ),
-        url("../img/Naranjestan-qavam-2.jpg");
-      height: 100vh;
-      background-size: cover;
-      background-repeat: no-repeat !important;
-      background-position: 50% 50%;
+        );
+        opacity: 0.6;
+      }
     }
 
     &-img3 {
-      background-image: linear-gradient(
-          to top,
+      img {
+        height: 100vh;
+        width: 100%;
+        background: center center cover no-repeat fixed;
+        background-position: center;
+      }
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: linear-gradient(
+          to bottom right,
           rgba($color-primary, 0.7),
           rgba($color-primary-dark, 0.6)
-        ),
-        url("../img/Hafeziye.jpg");
-      height: 100vh;
-      background-size: cover;
-      background-repeat: no-repeat !important;
-      background-position: 50% 50%;
+        );
+        opacity: 0.6;
+      }
     }
 
     &-img4 {
-      background-image: linear-gradient(
-          to top,
+      img {
+        height: 100vh;
+        width: 100%;
+        background: center center cover no-repeat fixed;
+        background-position: center;
+      }
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: linear-gradient(
+          to bottom right,
           rgba($color-primary, 0.7),
           rgba($color-primary-dark, 0.6)
-        ),
-        url("../img/Delgosha-garden.jpg");
-      height: 100vh;
-      background-size: cover;
-      background-repeat: no-repeat !important;
-      background-position: 50% 50%;
+        );
+        opacity: 0.6;
+      }
     }
 
     @include respond(tab-port) {
@@ -272,7 +311,7 @@
       rgba($color-white, 0.9) 50%,
       transparent 50%
     ),
-    url("/img/15946490274_afdece9faa_b.jpg");
+    url(../images/15946490274_afdece9faa_b.jpg);
   background-size: cover;
   box-shadow: 0 1.5rem 4rem $shadow-primary;
   border-radius: 1.5rem;
@@ -283,16 +322,16 @@
         rgba($color-white, 0.9) 65%,
         transparent 65%
       ),
-      url("/img/Nasir-molk-2.jpg");
+      url(../images/15946490274_afdece9faa_b.jpg);
   }
 
   @include respond(tab-port) {
     background-image: linear-gradient(
-      to right,
-      rgba($color-white, 0.9) 0%,
-      rgba($color-white, 0.9) 100%
-    );
-    //   url(../img/nat-10.jpg);
+        to right,
+        rgba($color-white, 0.9) 0%,
+        rgba($color-white, 0.9) 100%
+      ),
+      url(../images/15946490274_afdece9faa_b.jpg);
   }
 
   &__form {
